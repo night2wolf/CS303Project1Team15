@@ -24,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="Debug\Project1BTeam15.log" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -32,5 +33,32 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stringtokenizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\Project1BTeam15.exe" />
+    <None Include="Debug\Project1BTeam15.ilk" />
+    <None Include="Debug\Project1BTeam15.pdb" />
+    <None Include="Debug\vc141.idb" />
+    <None Include="Debug\vc141.pdb" />
+    <None Include="Debug\Project1BTeam15.tlog\CL.command.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\CL.read.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\CL.write.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\link.command.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\link.read.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\link.write.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\Project1BTeam15.lastbuildstate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Debug\Project1BTeam15.obj" />
+    <Object Include="Debug\stdafx.obj" />
   </ItemGroup>
 </Project>

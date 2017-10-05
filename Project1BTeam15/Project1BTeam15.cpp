@@ -3,10 +3,13 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include "Book.h"
+#include "date.h"
 using namespace std;
 
 int main()
 {
+	// This can be removed when done. just had it for initial compile test.
 	cout << "hello world";
 	//TODO: These Functions are what need to be called and implemented in the main:
 	/*

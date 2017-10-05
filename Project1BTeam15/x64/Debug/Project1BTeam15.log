@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  Project1BTeam15.cpp
+  Generating Code...
+Debug\Project1BTeam15.obj : fatal error LNK1112: module machine type 'x86' conflicts with target machine type 'x64'

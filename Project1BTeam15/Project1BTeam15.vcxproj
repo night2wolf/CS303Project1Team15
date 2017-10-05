@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{2E74C2A7-2137-41A7-A5F0-4C247BA17036}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -70,11 +70,33 @@
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Debug\Project1BTeam15.log" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="date.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Stringtokenizer.h" />
     <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\Project1BTeam15.exe" />
+    <None Include="Debug\Project1BTeam15.ilk" />
+    <None Include="Debug\Project1BTeam15.pdb" />
+    <None Include="Debug\Project1BTeam15.tlog\CL.command.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\CL.read.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\CL.write.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\link.command.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\link.read.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\link.write.1.tlog" />
+    <None Include="Debug\Project1BTeam15.tlog\Project1BTeam15.lastbuildstate" />
+    <None Include="Debug\vc141.idb" />
+    <None Include="Debug\vc141.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Debug\Project1BTeam15.obj" />
+    <Object Include="Debug\stdafx.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

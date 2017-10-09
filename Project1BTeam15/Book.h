@@ -11,15 +11,24 @@ public:
 	string get_name() 
 	{return Name;}
 	string set_name(string name)
-	{name = Name;}
+	{
+	name = Name;
+	return name;
+	}
 	Date get_start_date()
 	{return startdate;}
 	Date set_start_date(Date date)
-	{date = startdate;}
+	{
+		date = startdate;
+	return date;
+	}
 	Date get_circulation_end_date()
 	{return circulationenddate;}
 	Date set_circulation_end_date(Date circulation_date)
-	{circulation_date = circulationenddate;}
+	{
+	circulation_date = circulationenddate;
+	return circulation_date;
+	}
 
 private:
 	string Name;

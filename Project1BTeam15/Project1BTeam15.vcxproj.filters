@@ -45,6 +45,9 @@
     <ClInclude Include="Library.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="employee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Project1BTeam15.exe" />

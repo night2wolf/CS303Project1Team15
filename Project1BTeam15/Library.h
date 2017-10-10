@@ -4,13 +4,14 @@
 #include "Book.h"
 #include <queue>
 #include <list>
+#include "employee.h"
 
 using namespace std;
 /*Library Class written by Trevor Klinkenberg
 tkndf@mail.umkc.edu*/
 list<Book> booklist;
-//TODO: Need Employee class for this.
-// list<Employee> employeelist;
+list<Employee> employeelist;
+
 class Library
 {
 public:
@@ -25,19 +26,18 @@ public:
 		booklist.push_back(book);
 		return book;
 	}
-	/*
-	// TODO: Need Employee class for this (name, waiting time, and retaining time)
+	
 	Employee add_employee(string employeename)
 	{
-		//Employee employee
-		//employee.set_name(employeename);
-		//employee.set_waiting_time(int waitingtime);
-		//employee.set_retaining_time(int retainingtime);
+		Employee employee;
+		employee.set_name(employeename);
+		employee.set_waiting_time(0);
+		employee.set_retaining_time(0);
 		// Create list of employee objects
-		//employeelist.push_back(employee);
-		//return employee;
+		employeelist.push_back(employee);
+		return employee;
 	}
-	*/
+	
 	void circulate_book(string book, Date date )
 	{
 		//TODO: Need a way to look up a book object by string.
@@ -47,7 +47,7 @@ public:
 
 		//This should be emplyoyee list when employee class is created...
 		// Implement the below in some form to archive a book.
-		if (booklist.begin() == booklist.end())
+		if (employeelist.begin() == employeelist.end())
 		{
 			Book front_book = booklist.front();
 			front_book.set_archived(true);

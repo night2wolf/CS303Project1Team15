@@ -3,7 +3,7 @@
 #include "date.h"
 #include "Book.h"
 #include <queue>
-#include <list>>
+#include <list>
 
 using namespace std;
 /*Library Class written by Trevor Klinkenberg
@@ -21,18 +21,21 @@ public:
 		book.set_name(bookname);
 		book.set_start_date(Date(1, 1, 1, DateFormat::US));
 		book.set_circulation_end_date(Date(1, 1, 1, DateFormat::US));
+		//Create list of book objects.
 		booklist.push_back(book);
 		return book;
 	}
 	/*
-	// TODO: Need Employee class for this
-	string add_employee(string employeename)
+	// TODO: Need Employee class for this (name, waiting time, and retaining time)
+	Employee add_employee(string employeename)
 	{
 		//Employee employee
-		//employee.set_name = employeename
-		//
-		//
-		//return employee
+		//employee.set_name(employeename);
+		//employee.set_waiting_time(int waitingtime);
+		//employee.set_retaining_time(int retainingtime);
+		// Create list of employee objects
+		//employeelist.push_back(employee);
+		//return employee;
 	}
 	*/
 	void circulate_book(string book, Date date )
@@ -42,7 +45,13 @@ public:
 
 		//TODO: use add_days function in date class
 
-
+		//This should be emplyoyee list when employee class is created...
+		// Implement the below in some form to archive a book.
+		if (booklist.begin() == booklist.end())
+		{
+			Book front_book = booklist.front();
+			front_book.set_archived(true);
+		}
 
 		// The below Push pop taken from lecture notes for implementing a queue with a linked list.
 		/*
@@ -77,12 +86,7 @@ public:
 	void pass_on (string book, Date date)
 	{
 		//add_days function in date class
-		//This should be emplyoyee list when employee class is created...
-		if (booklist.empty())
-		{
-			Book front_book = booklist.front();
-				front_book.set_archived(true);
-		}
+		
 	}
 
 

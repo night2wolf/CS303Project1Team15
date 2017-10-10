@@ -36,10 +36,12 @@ int main()
 	library.add_employee("Ann");
 	*/
 
+	// Now that the Employee and Book list are populated They can be iterated and Cycled through.
+
 	// Function Call to Library class
 	cout << "Circulating Chemistry book";
 	library.circulate_book("Chemistry", Date(2015, 3, 1, DateFormat::US));
-	cout << " Circulating software engineering book";
+	cout << "Circulating software engineering book";
 	library.circulate_book("Software Engineering", Date(2015, 3, 5, DateFormat::US));
 
 	//Pass on Chemistry book

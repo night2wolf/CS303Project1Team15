@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include "date.h"
-//TODO: Employee queue logic
-// #include "nameoflogicqueuehere"
+/*Library Class written by Trevor Klinkenberg
+tkndf@mail.umkc.edu*/
 
 using namespace std;
 // (name, circulation start date, circulation end date, archived, and queue of employees)
@@ -29,11 +29,18 @@ public:
 	circulation_date = circulationenddate;
 	return circulation_date;
 	}
+	bool get_archived()
+	{return archived;}
+	bool set_archived(bool Archived)
+	{
+		archived = Archived;
+		return archived;
+	}
 
 private:
 	string Name;
 	Date startdate;
 	Date circulationenddate;
-	bool archived;
+	bool archived = true;
 // queue employeequeue;
 };

@@ -68,51 +68,43 @@ public:
 		for ((it) = booklist.begin(); (it) != booklist.end(); (it)++)
 		{
 			if ((it)->get_name() == book)
-			{				
-				 //Return Employee with highest priority.				
+			{
+				//Return Employee with highest priority.				
 				Date begin = (it)->get_start_date(); // get the start date of the current book
 				Date end = (it)->set_circulation_end_date(date); // set end date to pass to next employee
 				int total = end - begin; //Total time book is in circulation.
 				// set wait time and retain time for all employees in the list.
-				for ((em) = employeelist.begin(); (em) != employeelist.end(); (em) ++)
+				while (end >= begin)
 				{
-					Employee employee = (it)->find_priority(employeelist);
-					if ((em)->get_name() == employee.get_name()) // find employee and set how long they held onto the book
+					for ((em) = employeelist.begin(); (em) != employeelist.end(); (em)++)
 					{
-						(em)->set_retaining_time(total);
+						Employee employee = (it)->find_priority(employeelist);
+						if ((em)->get_name() == employee.get_name()) // find employee and add a day to how long they held the book
+						{
+							(em)->set_retaining_time(1 + (em)->get_retaining_time());
+						}
+						else
+						{
+							(em)->set_waiting_time(1 + (em)->get_waiting_time()); // Everyone else waits a day
+						}
+
+						if ((em)->get_priority() >= employee.get_priority()) // Re-evaluate if we need to give the book to someone else.
+						{
+							(em)->set_retaining_time(1 + (em)->get_retaining_time());
+						}
+						// If we get to the end of the employee list before the last day, archive the book
+						if (employeelist.end() == (em))
+						{
+							(it)->set_archived(true);
+							archived.push_back(*it); //Add to archive list - Heads up this won't work. dereferencing an iterator is not pretty
+							booklist.erase(it); // remove from booklist
+						}
 					}
-					Employee pr;
-					//Rebuild Current Employee cause dereferencing the pointer breaks things.
-					pr.set_name((em)->get_name());
-					pr.set_retaining_time((em)->get_retaining_time());
-					pr.set_waiting_time((em)->get_waiting_time());
-					if(employee.get_priority() == pr.get_priority()) // so we don't add wait time to the current holder.
-					{							
-						pr.set_waiting_time(pr.get_waiting_time());
-					}
-					else
-					{
-						pr.set_waiting_time(total);
-					}
+					begin.add_days(1);
 				}
 			}
-			
-			/* Need some logic here for archiving the book....
-			if (true )//Pass on employee list work here.
-			{
-
-			}
-			else
-			{
-				(it)->set_archived(true); //archive that book
-				archived.push_back(*it); //Add to archive list - Heads up this won't work. dereferencing an iterator is not pretty
-				booklist.erase(it); // remove from booklist
-			}
-			*/
-		}
 		
-
-		
+		}		
 	}
 
 

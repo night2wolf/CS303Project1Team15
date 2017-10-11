@@ -5,7 +5,8 @@
 #include "employee.h"
 
 using namespace std;
-
+/*Queue to determine prority of Employees
+Trevor Klinkenberg tkndf@mail.umkc.edu*/
 
 class EmployeeQueue
 {

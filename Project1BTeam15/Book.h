@@ -11,30 +11,29 @@ class Book {
 public:
 	Employee find_priority(list<Employee> employeelist)
 	{
-		Employee employee;
-		employeequeue.find_top_priority(employeelist);	
+		Employee employee = employeequeue.find_top_priority(employeelist);
 		return employee;
 	}
 	string get_name() 
 	{return Name;}
 	string set_name(string name)
 	{
-	name = Name;
-	return name;
+	Name = name;
+	return Name;
 	}
 	Date get_start_date()
 	{return startdate;}
 	Date set_start_date(Date date)
 	{
-		date = startdate;
-	return date;
+		startdate = date;
+	return startdate;
 	}
 	Date get_circulation_end_date()
 	{return circulationenddate;}
 	Date set_circulation_end_date(Date circulation_date)
 	{
-	circulation_date = circulationenddate;
-	return circulation_date;
+	circulationenddate = circulation_date;
+	return circulationenddate;
 	}
 	bool get_archived()
 	{return archived;}

@@ -46,10 +46,10 @@ public:
 		list<Book>::iterator it;
 		for (it=booklist.begin(); it!=booklist.end(); it++)
 		{
-			if (it->get_name() == book)
+			if ((it)->get_name() == book)
 			{
-				it->set_archived(false); // TODO; fix this later this should be the "give employee in queue book" function.
-				it->set_start_date(date); // set current start date of book
+				Employee priority = (it)->find_priority(employeelist); // TODO; fix this later this should be the "give employee in queue book" function.
+				(it)->set_start_date(date); // set current start date of book
 			}
 			else
 			{
@@ -68,15 +68,34 @@ public:
 	void pass_on (string book, Date date)
 	{
 		// look up a book object by string.
-		list<Book>::iterator it;
+		
+		list<Book>::iterator it; // Book list iterator
+		list<Employee>::iterator em; // Employee list iterator
 		for (it = booklist.begin(); it != booklist.end(); it++)
 		{
-			if (it->get_name() == book)
+			if ((it)->get_name() == book)
 			{
-				it->set_archived(false); // TODO; fix this later this should be the "give employee in queue book" function.
-				Date begin = it->get_start_date(); // get the start date of the current book
-				Date end = it->set_circulation_end_date(date); // set end date to pass to next employee
+				Employee priority = (it)->find_priority(employeelist); //Return Employee with highest priority.
+				Date begin = (it)->get_start_date(); // get the start date of the current book
+				Date end = (it)->set_circulation_end_date(date); // set end date to pass to next employee
 				int total = end - begin;
+				priority.set_retaining_time(total); // add the retaining time to the employee with the book.
+
+				// No idea what i am doing here. got lost trying to add waiting time and retaining time to each member of employee list.
+				for (em = employeelist.begin(); em != employeelist.end(); em ++)
+				{
+					Employee pr = (*em);
+					if(priority.get_priority() == pr.get_priority())
+					{						
+						int wait = 0;
+						pr.set_waiting_time(wait);
+
+					}
+					else
+					{
+						pr.set_waiting_time(total);
+					}
+				}
 			}
 			else
 			{
@@ -88,12 +107,13 @@ public:
 			}
 			else
 			{
-				it->set_archived(true); //archive that book
+				(it)->set_archived(true); //archive that book
 				archived.push_back(*it); //Add to archive list
-				booklist.remove(*it); // remove from booklist
+				booklist.erase(it); // remove from booklist
 			}
 
 		}
+		
 		//add_days function in date class
 		// Implement the below in some form to archive a book.
 

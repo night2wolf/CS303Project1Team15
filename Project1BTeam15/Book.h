@@ -9,6 +9,12 @@ using namespace std;
 // (name, circulation start date, circulation end date, archived, and queue of employees)
 class Book {
 public:
+	Employee find_priority(list<Employee> employeelist)
+	{
+		Employee employee;
+		employeequeue.find_top_priority(employeelist);	
+		return employee;
+	}
 	string get_name() 
 	{return Name;}
 	string set_name(string name)

@@ -30,11 +30,11 @@ int main()
 	
 	// Function to add Employees to Library class
 	cout << "adding Employees";
-	/*
-	library.add_Employee("Adam");
+	
+	library.add_employee("Adam");
 	library.add_employee("Sam");
 	library.add_employee("Ann");
-	*/
+	
 
 	// Now that the Employee and Book list are populated They can be iterated and Cycled through.
 

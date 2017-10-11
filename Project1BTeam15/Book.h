@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "date.h"
+#include "employee_queue.h"
 /*Library Class written by Trevor Klinkenberg
 tkndf@mail.umkc.edu*/
 
@@ -41,6 +42,6 @@ private:
 	string Name;
 	Date startdate;
 	Date circulationenddate;
-	bool archived = true;
-// queue employeequeue;
+	bool archived = false;
+	EmployeeQueue employeequeue;
 };

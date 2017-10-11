@@ -11,6 +11,7 @@ using namespace std;
 tkndf@mail.umkc.edu*/
 list<Book> booklist;
 list<Employee> employeelist;
+list<Book> archived;
 
 class Library
 {
@@ -33,59 +34,69 @@ public:
 		employee.set_name(employeename);
 		employee.set_waiting_time(0);
 		employee.set_retaining_time(0);
-		// Create list of employee objects
+		// Create list of employee objects		
 		employeelist.push_back(employee);
 		return employee;
 	}
 	
 	void circulate_book(string book, Date date )
 	{
-		//TODO: Need a way to look up a book object by string.
+		
+		// look up a book object by string.
+		list<Book>::iterator it;
+		for (it=booklist.begin(); it!=booklist.end(); it++)
+		{
+			if (it->get_name() == book)
+			{
+				it->set_archived(false); // TODO; fix this later this should be the "give employee in queue book" function.
+				it->set_start_date(date); // set current start date of book
+			}
+			else
+			{
+				throw exception::exception("Book not found");
+			}
 
-
+		}
 		//TODO: use add_days function in date class
 
-		//This should be emplyoyee list when employee class is created...
-		// Implement the below in some form to archive a book.
-		if (employeelist.begin() == employeelist.end())
-		{
-			Book front_book = booklist.front();
-			front_book.set_archived(true);
-		}
+		
 
-		// The below Push pop taken from lecture notes for implementing a queue with a linked list.
-		/*
-		void push(const Book& books) 
-		{
 
-			if (front_of_queue == NULL) {
-				back_of_queue = new Node(item, NULL);
-				front_of_queue = back_of_queue;
-			}
-			else {
-				back_of_queue->next = new Node(item, NULL);
-				back_of_queue = back_of_queue->next;
-			}
-			num_items++;
-		}
-		void pop() {
-			Node* old_front = front_of_queue;
-			front_of_queue = front_of_queue->next;
-
-			if (front_of_queue == NULL) {
-				back_of_queue = NULL;
-			}
-
-			delete old_front;
-			num_items--;
-		}
-		*/
 		
 		
 	}
 	void pass_on (string book, Date date)
 	{
+		// look up a book object by string.
+		list<Book>::iterator it;
+		for (it = booklist.begin(); it != booklist.end(); it++)
+		{
+			if (it->get_name() == book)
+			{
+				it->set_archived(false); // TODO; fix this later this should be the "give employee in queue book" function.
+				Date begin = it->get_start_date(); // get the start date of the current book
+				Date end = it->set_circulation_end_date(date); // set end date to pass to next employee
+				int total = end - begin;
+			}
+			else
+			{
+				throw exception::exception("Book not found");
+			}
+			if (true )//Pass on employee list work here.
+			{
+
+			}
+			else
+			{
+				it->set_archived(true); //archive that book
+				archived.push_back(*it); //Add to archive list
+				booklist.remove(*it); // remove from booklist
+			}
+
+		}
 		//add_days function in date class
+		// Implement the below in some form to archive a book.
+
 		
 	}
 

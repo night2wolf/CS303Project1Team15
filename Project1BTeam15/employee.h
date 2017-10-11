@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Employee class(name, waiting time, and retaining time)
+// Employee class(name, waiting time, and retaining time , Priority)
 
 class  Employee
 {
@@ -30,11 +30,16 @@ public:
 		retaining_time = Retaining_time;
 		return retaining_time;
 	}
-
+	int get_priority()
+	{
+		priority = waiting_time - retaining_time;
+		return priority;
+	}
 
 private:
 	string name;
 	int waiting_time;
 	int retaining_time;
+	int priority;
 };
 

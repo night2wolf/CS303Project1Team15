@@ -35,6 +35,11 @@ public:
 		priority = waiting_time - retaining_time;
 		return priority;
 	}
+	int set_prirority(int Priority)
+	{
+		priority = Priority;
+		return priority;
+	}
 
 private:
 	string name;

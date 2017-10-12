@@ -61,7 +61,13 @@ public:
 	// Remove front of queue.
 	void remove_queue()
 	{
+		/*if (!employeeQueue.empty())
+		{
+			
+		}
+		*/
 		employeeQueue.pop();
+		
 	}
 
 	EmployeeQueue();

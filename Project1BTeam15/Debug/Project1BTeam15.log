@@ -1,7 +1,2 @@
-﻿  stdafx.cpp
-  Project1BTeam15.cpp
-  Generating Code...
-Debug\Project1BTeam15.obj : warning LNK4042: object specified more than once; extras ignored
-Debug\stdafx.obj : warning LNK4042: object specified more than once; extras ignored
-  Project1BTeam15.vcxproj -> C:\Users\tklinkenberg\Desktop\School\Data Structures Programs\Project1\Project1BTeam15\Debug\Project1BTeam15.exe
+﻿  Project1BTeam15.vcxproj -> C:\Users\tklinkenberg\Desktop\School\Data Structures Programs\Project1\Project1BTeam15\Debug\Project1BTeam15.exe
   Project1BTeam15.vcxproj -> C:\Users\tklinkenberg\Desktop\School\Data Structures Programs\Project1\Project1BTeam15\Debug\Project1BTeam15.pdb (Partial PDB)

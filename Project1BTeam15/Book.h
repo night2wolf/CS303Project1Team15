@@ -42,6 +42,26 @@ public:
 		archived = Archived;
 		return archived;
 	}
+	EmployeeQueue add_Employees(list<Employee> employeelist)
+	{
+		list<Employee>::iterator it;
+		for ((it) =employeelist.begin(); (it) != employeelist.end(); (it)++)
+		{
+
+			Employee empl;
+			empl.set_name((it)->get_name());
+			empl.set_retaining_time((it)->get_retaining_time());
+			empl.set_waiting_time((it)->get_waiting_time());
+			employeequeue.add_queue(empl);
+		}
+		return employeequeue;
+		
+	}
+	EmployeeQueue remove_employee(Employee employee)
+	{
+		employeequeue.remove_queue();
+		return employeequeue;
+	}
 
 private:
 	string Name;

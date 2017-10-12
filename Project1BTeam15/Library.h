@@ -48,6 +48,7 @@ public:
 		list<Book>::iterator it;
 		for ((it)=booklist.begin(); (it)!=booklist.end(); (it)++)
 		{
+
 			if ((it)->get_name() == book)
 			{				
 				// Employee employee = (it)->find_priority(employeelist); // no point in this being here
@@ -67,6 +68,8 @@ public:
 		list<Employee>::iterator em; // Employee list iterator
 		for ((it) = booklist.begin(); (it) != booklist.end(); (it)++)
 		{
+			
+			EmployeeQueue employeequeue = (it)->add_Employees(employeelist); //Create employee Queue for each book
 			if ((it)->get_name() == book)
 			{
 				//Return Employee with highest priority.				
@@ -82,6 +85,11 @@ public:
 						if ((em)->get_name() == employee.get_name()) // find employee and add a day to how long they held the book
 						{
 							(em)->set_retaining_time(1 + (em)->get_retaining_time());
+							Employee empl = employeequeue.front();
+							if (empl.get_name() == employee.get_name()) // Make sure that employee is the front of queue
+							{
+								employeequeue.remove_queue(); //remove from queue.
+							}
 						}
 						else
 						{
@@ -93,19 +101,26 @@ public:
 							(em)->set_retaining_time(1 + (em)->get_retaining_time());
 						}
 						// If we get to the end of the employee list before the last day, archive the book
-						if (employeelist.end() == (em))
+
+						if (employeequeue.empty() == true)
 						{
 							(it)->set_archived(true);
-							archived.push_back(*it); //Add to archive list - Heads up this won't work. dereferencing an iterator is not pretty
+							Book arch;
+							arch.set_name((it)->get_name());
+							arch.set_circulation_end_date((it)->get_circulation_end_date());
+							arch.set_start_date((it)->get_start_date());
+							arch.set_archived((it)->get_archived());
+							archived.push_back(arch); //Add to archive list - Heads up this won't work. dereferencing an iterator is not pretty
 							booklist.erase(it); // remove from booklist
 						}
+					}
+						
 					}
 					begin.add_days(1);
 				}
 			}
 		
 		}		
-	}
 
 
 private:
